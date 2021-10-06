@@ -1,0 +1,35 @@
+﻿<Window x:Class="PlariumTask2.Task1v2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:PlariumTask2"
+        mc:Ignorable="d"
+        Title="Task1v2" Height="450" Width="384" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <TextBox x:Name="deposTextBox" HorizontalAlignment="Left" Height="23" Margin="45,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="percentTextBox" HorizontalAlignment="Left" Height="23" Margin="246,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Deposit sum:" HorizontalAlignment="Left" Margin="45,14,0,0" VerticalAlignment="Top"/>
+        <Label Content="Percent:" HorizontalAlignment="Left" Margin="215,14,0,0" VerticalAlignment="Top"/>
+        <Button Content="Find" HorizontalAlignment="Left" Margin="42,368,0,0" VerticalAlignment="Top" Width="120" Height="29" Click="Button_Click"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="212,368,0,0" VerticalAlignment="Top" Width="120" Height="29" Click="Button_Click_1"/>
+        <ListView x:Name="increaseList" HorizontalAlignment="Left" Height="236" Margin="42,101,0,0" VerticalAlignment="Top" Width="120">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Increase Amount"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="depositList" HorizontalAlignment="Left" Height="236" Margin="212,101,0,0" VerticalAlignment="Top" Width="120">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Deposit Amount"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <xctk:IntegerUpDown Name="upDownControl" Margin="154,68,153.6,324" AllowTextInput="False" Minimum="1"/>
+        <Label Content="Months" HorizontalAlignment="Left" Margin="152,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,1"/>
+    </Grid>
+</Window>
