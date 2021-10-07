@@ -1,4 +1,6 @@
-﻿namespace PlariumTasks
+﻿using System;
+
+namespace PlariumTasks
 {
     static public class Task1
     {
@@ -34,8 +36,11 @@
          * Прирост суммы вклада за первый, второй, ..., десятый месяц;
          * Метод возвращает массив, с суммами прироста за каждый месяц.
          */
-        static public decimal[] IncreaseAmount(decimal amount, decimal percent, int months)
+        static public decimal[] IncreaseAmount(decimal amount, decimal percent, uint months)
         {
+            if (amount < 0 || percent < 0)
+                new ArgumentException();
+
             var incrementAmounts = new decimal[months];
             
             for(var i = 0; i < incrementAmounts.Length; i++)
@@ -50,8 +55,11 @@
          * Cуммы вклада через три, четыре, ..., двенадцать месяцев.
          * Метод возвращает массив, с суммами вклада через указанные месяца.
          */
-        static public decimal[] DepositAmount(decimal amount, decimal percent, int months)
+        static public decimal[] DepositAmount(decimal amount, decimal percent, uint months)
         {
+            if (amount < 0 || percent < 0)
+                throw new ArgumentException();
+
             var incrementAmounts = new decimal[months];
             var coefficient = percent * 0.01m;
 

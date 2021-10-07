@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using PlariumTask2.DialogWindows;
 
 namespace PlariumTask2
 {

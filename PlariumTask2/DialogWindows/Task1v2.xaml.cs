@@ -2,7 +2,7 @@
 using System.Windows;
 using PlariumTasks;
 
-namespace PlariumTask2
+namespace PlariumTask2.DialogWindows
 {
     /// <summary>
     /// Логика взаимодействия для Task1v2.xaml
@@ -12,11 +12,12 @@ namespace PlariumTask2
         public Task1v2()
         {
             InitializeComponent();
-            // add by delegats
+            btnFind.Click += ButtonFind_Click;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonFind_Click(object sender, RoutedEventArgs e)
         {
+            // очишаем ListView перед заполнением
             if(!increaseList.Items.IsEmpty)
             {
                 increaseList.Items.Clear();
@@ -24,23 +25,24 @@ namespace PlariumTask2
             }
 
             decimal sum, percent;
-            int months;
+            decimal[] increaseArray, depositArray;
+            uint months;
 
             try
             {
-                sum = Convert.ToDecimal(deposTextBox.Text);
-                percent = Convert.ToDecimal(percentTextBox.Text);
-                months = int.Parse(upDownControl.Text);
+                sum = decimal.Parse(deposTextBox.Text);
+                percent = decimal.Parse(percentTextBox.Text);
+                months = uint.Parse(upDownControl.Text);
+
+                increaseArray = Task1.IncreaseAmount(sum, percent, months);
+                depositArray = Task1.DepositAmount(sum, percent, months);
             }
             catch
             {
-                MessageBox.Show("Not valid data!");
+                MessageBox.Show("Wrong data!", "Error!", MessageBoxButton.OK, MessageBoxImage.Warning);
                 deposTextBox.Text = percentTextBox.Text = string.Empty;
                 return;
             }
-
-            decimal[] increaseArray = Task1.IncreaseAmount(sum, percent, months);
-            decimal[] depositArray = Task1.DepositAmount(sum, percent, months);
 
             for(var i = 0; i < months; i++)
             {

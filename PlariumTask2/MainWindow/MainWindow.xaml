@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="First Task" Height="200" Width="250" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="58*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -15,11 +19,15 @@
         <Button x:Name="bthTask1"
                 Grid.Row="0" 
                 Content="Task 1.1"
-                Margin="25"/>
-        
+                Margin="25,25,25.2,24.6"
+                Background="DodgerBlue"
+                Foreground="White" Grid.ColumnSpan="2"/>
+
         <Button x:Name="bthTask2"
-                Grid.Row="2"
+                Grid.Row="1"
                 Content="Task 1.2" 
-                Margin="25"/>
+                Margin="25,25.4,25.2,25.4"
+                Background="DodgerBlue"
+                Foreground="White" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

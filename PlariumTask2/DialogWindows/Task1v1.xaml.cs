@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows;
+using System.Text.RegularExpressions;
 using PlariumTasks;
 
-namespace PlariumTask2
+namespace PlariumTask2.DialogWindows
 {
     /// <summary>
     /// Логика взаимодействия для Task1v1.xaml
@@ -21,15 +22,17 @@ namespace PlariumTask2
 
             try
             {
-                array = Array.ConvertAll(TextNumbers.Text.Trim(' ').Split(' ', ','), int.Parse);
-                Result.Content = string.Join("", Task1.FindProduct(array));
-                TextNumbers.Text = TextNumbers.Text.Trim(' ');
+                array = Array.ConvertAll(textNumbers.Text.Trim(' ').Split(' ', ','), int.Parse);
             }
             catch
             {
-                MessageBox.Show("Not valid data!"); // add warnigng sign
-                TextNumbers.Text = string.Empty;
+                MessageBox.Show("Wrong data!", "Error!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                textNumbers.Text = string.Empty;
+                return;
             }
+
+            resultLabel.Content = string.Join("", Task1.FindProduct(array));
+            textNumbers.Text = textNumbers.Text.Trim(' ');
         }
     }
 }

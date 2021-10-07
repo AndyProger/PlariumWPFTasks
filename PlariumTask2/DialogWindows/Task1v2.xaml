@@ -1,4 +1,4 @@
-﻿<Window x:Class="PlariumTask2.Task1v2"
+﻿<Window x:Class="PlariumTask2.DialogWindows.Task1v2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,7 +13,7 @@
         <TextBox x:Name="percentTextBox" HorizontalAlignment="Left" Height="23" Margin="246,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
         <Label Content="Deposit sum:" HorizontalAlignment="Left" Margin="45,14,0,0" VerticalAlignment="Top"/>
         <Label Content="Percent:" HorizontalAlignment="Left" Margin="215,14,0,0" VerticalAlignment="Top"/>
-        <Button Content="Find" HorizontalAlignment="Left" Margin="42,368,0,0" VerticalAlignment="Top" Width="120" Height="29" Click="Button_Click"/>
+        <Button x:Name="btnFind" Content="Find" HorizontalAlignment="Left" Margin="42,368,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="212,368,0,0" VerticalAlignment="Top" Width="120" Height="29" Click="Button_Click_1"/>
         <ListView x:Name="increaseList" HorizontalAlignment="Left" Height="236" Margin="42,101,0,0" VerticalAlignment="Top" Width="120">
             <ListView.View>

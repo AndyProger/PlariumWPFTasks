@@ -83,14 +83,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Task1.cs" />
-    <Compile Include="Task1v1.xaml.cs">
+    <Compile Include="Tasks\Task1.cs" />
+    <Compile Include="DialogWindows\Task1v1.xaml.cs">
       <DependentUpon>Task1v1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Task1v2.xaml.cs">
+    <Compile Include="DialogWindows\Task1v2.xaml.cs">
       <DependentUpon>Task1v2.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="MainWindow\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -98,15 +98,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="MainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Task1v1.xaml">
+    <Page Include="DialogWindows\Task1v1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Task1v2.xaml">
+    <Page Include="DialogWindows\Task1v2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +138,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
