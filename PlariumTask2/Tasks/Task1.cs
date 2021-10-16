@@ -38,7 +38,7 @@ namespace PlariumTasks
          */
         static public decimal[] IncreaseAmount(decimal amount, decimal percent, uint months)
         {
-            if (amount < 0 || percent < 0)
+            if (amount < 0 || percent < 0 || percent > 100)
                 new ArgumentException();
 
             var incrementAmounts = new decimal[months];
@@ -57,7 +57,7 @@ namespace PlariumTasks
          */
         static public decimal[] DepositAmount(decimal amount, decimal percent, uint months)
         {
-            if (amount < 0 || percent < 0)
+            if (amount < 0 || percent < 0 || percent > 100)
                 throw new ArgumentException();
 
             var incrementAmounts = new decimal[months];

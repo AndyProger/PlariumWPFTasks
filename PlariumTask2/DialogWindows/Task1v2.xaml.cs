@@ -44,6 +44,7 @@ namespace PlariumTask2.DialogWindows
                 return;
             }
 
+            // вывод в списки
             for(var i = 0; i < months; i++)
             {
                 increaseList.Items.Add(i + 1 + "  " + increaseArray[i].ToString());
